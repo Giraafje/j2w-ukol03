@@ -11,76 +11,30 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
-<div class="seznam">
-    <a href="/detail">
-        <div class="vizitka">
-            <div class="jmeno">Dita (Přikrylová) Formánková</div>
-            <div class="firma">Czechitas z. s.</div>
-            <div class="udaje">
-                <div class="adresa">
-                    <div>Václavské náměstí 837/11</div>
-                    <div><span>11000</span> Praha 1</div>
+    [#list businessCardList]
+        <div class="seznam">
+        [#items as businessCard]
+            <a href="${businessCard?index}">
+                <div class="vizitka">
+                    <div class="jmeno">${businessCard.personName}</div>
+                    <div class="firma">${businessCard.companyName}</div>
+                    <div class="udaje">
+                        <div class="adresa">
+                            <div>${businessCard.street}</div>
+                            <div>${businessCard.cityPostalCode}</div>
+                        </div>
+                        <div class="kontakty">
+                            <div><i class="las la-at"></i> <span>${businessCard.email}</span></div>
+                            <div><i class="las la-phone-alt"></i> <span>${businessCard.phoneNumber}</span></div>
+                            <div><i class="las la-globe"></i> <span>${businessCard.website}</span></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="kontakty">
-                    <div><i class="las la-at"></i> <span>dita@czechitas.cs</span></div>
-                    <div><i class="las la-phone-alt"></i> <span>+420 800123456</span></div>
-                    <div><i class="las la-globe"></i> <span>www.czechitas.cz</span></div>
-                </div>
-            </div>
+            </a>
+        [/#items]
         </div>
-    </a>
-
-    <a href="/detail">
-        <div class="vizitka">
-            <div class="jmeno">Barbora Bühnová</div>
-            <div class="firma">Czechitas z. s.</div>
-            <div class="udaje">
-                <div class="adresa">
-                    <div>Václavské náměstí 837/11</div>
-                    <div><span>11000</span> Praha 1</div>
-                </div>
-                <div class="kontakty">
-                    <div><i class="las la-phone-alt"></i> <span>+420 800123456</span></div>
-                    <div><i class="las la-globe"></i> <span>www.czechitas.cz</span></div>
-                </div>
-            </div>
-        </div>
-    </a>
-
-    <a href="/detail">
-        <div class="vizitka">
-            <div class="jmeno">Monika Ptáčníková</div>
-            <div class="firma">Czechitas z. s.</div>
-            <div class="udaje">
-                <div class="adresa">
-                    <div>Václavské náměstí 837/11</div>
-                    <div><span>11000</span> Praha 1</div>
-                </div>
-                <div class="kontakty">
-                    <div><i class="las la-at"></i> <span>monika@czechitas.cs</span></div>
-                    <div><i class="las la-phone-alt"></i> <span>+420 800123456</span></div>
-                    <div><i class="las la-globe"></i> <span>www.czechitas.cz</span></div>
-                </div>
-            </div>
-        </div>
-    </a>
-
-    <a href="/detail">
-        <div class="vizitka">
-            <div class="jmeno">Mirka Zatloukalová</div>
-            <div class="firma">Czechitas z. s.</div>
-            <div class="udaje">
-                <div class="adresa">
-                    <div>Václavské náměstí 837/11</div>
-                    <div><span>11000</span> Praha 1</div>
-                </div>
-                <div class="kontakty">
-                    <div><i class="las la-at"></i> <span>mirka@czechitas.cs</span></div>
-                    <div><i class="las la-globe"></i> <span>www.czechitas.cz</span></div>
-                </div>
-            </div>
-        </div>
-    </a>
-</div>
+        [#else]
+            <div>There are no business cards.</div>
+    [/#list]
 </body>
 </html>
