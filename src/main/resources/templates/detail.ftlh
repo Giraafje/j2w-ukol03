@@ -11,27 +11,26 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
-<div class="detail">
-    <div class="vizitka">
-        <div class="jmeno">${businessCard.personName}</div>
-        <div class="firma">${businessCard.companyName}</div>
-        <div class="udaje">
-            <div class="adresa">
-                <div>${businessCard.street}</div>
-                <div>${businessCard.cityPostalCode}</div>
-            </div>
-            <div class="kontakty">
-                <div><i class="las la-at"></i> <span>${businessCard.email}</span></div>
-                <div><i class="las la-phone-alt"></i> <span>${businessCard.phoneNumber}</span></div>
-                <div><i class="las la-globe"></i> <span>${businessCard.website}</span></div>
+    <div class="detail">
+        <div class="vizitka">
+            <div class="jmeno">${businessCard.personName}</div>
+            <div class="firma">${businessCard.companyName}</div>
+            <div class="udaje">
+                <div class="adresa">
+                    <div>${businessCard.street}</div>
+                    <div>${businessCard.cityPostalCode}</div>
+                </div>
+                <div class="kontakty">
+                    <div><i class="las la-at"></i> <span>[#if businessCard.email??]${businessCard.email}[#else]-[/#if]</span></div>
+                    <div><i class="las la-phone-alt"></i><span>[#if businessCard.phoneNumber??]${businessCard.phoneNumber}[#else]-[/#if]</span></div>
+                    <div><i class="las la-globe"></i><span>[#if businessCard.website??]${businessCard.website}[#else]-[/#if]</span></div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="mapa">
-        <iframe style="border:none" src="https://frame.mapy.cz/?q=${businessCard.fullAddress?url("UTF-8")}" width="100%" height="100%" frameborder="0"></iframe>
+        <div class="mapa">
+            <iframe style="border:none" src="https://frame.mapy.cz/?q=${businessCard.fullAddress?url("UTF-8")}" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
     </div>
-
-</div>
 </body>
 </html>

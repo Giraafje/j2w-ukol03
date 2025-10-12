@@ -24,9 +24,9 @@
                             <div>${businessCard.cityPostalCode}</div>
                         </div>
                         <div class="kontakty">
-                            <div><i class="las la-at"></i> <span>${businessCard.email}</span></div>
-                            <div><i class="las la-phone-alt"></i> <span>${businessCard.phoneNumber}</span></div>
-                            <div><i class="las la-globe"></i> <span>${businessCard.website}</span></div>
+                            <div><i class="las la-at"></i> <span>[#if businessCard.email??]${businessCard.email}[#else]-[/#if]</span></div>
+                            <div><i class="las la-phone-alt"></i><span>[#if businessCard.phoneNumber??]${businessCard.phoneNumber}[#else]-[/#if]</span></div>
+                            <div><i class="las la-globe"></i><span>[#if businessCard.website??]${businessCard.website}[#else]-[/#if]</span></div>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
         [/#items]
         </div>
         [#else]
-            <div>There are no business cards.</div>
+            <div class="empty">There are no business cards.</div>
     [/#list]
 </body>
 </html>
