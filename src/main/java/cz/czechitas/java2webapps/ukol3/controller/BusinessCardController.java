@@ -1,9 +1,11 @@
 package cz.czechitas.java2webapps.ukol3.controller;
 
+import cz.czechitas.java2webapps.ukol3.entities.BusinessCard;
 import cz.czechitas.java2webapps.ukol3.service.BusinessCardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -31,4 +33,16 @@ public class BusinessCardController {
     modelAndView.addObject("businessCard", service.getById(id));
     return modelAndView;
   }
+
+  @GetMapping("/nova")
+  public ModelAndView nova() {
+    return new ModelAndView("nova");
+  }
+
+  @PostMapping("/")
+  public String append(BusinessCard businessCard) {
+    service.append(businessCard);
+    return "redirect:/";
+  }
+
 }

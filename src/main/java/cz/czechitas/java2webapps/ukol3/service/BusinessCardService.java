@@ -25,4 +25,9 @@ public class BusinessCardService {
   public BusinessCard getById(int id) {
     return businessCardList.get(id);
   }
+
+  public void append(BusinessCard businessCard) {
+    businessCardList.add(businessCard);
+  }
+
 }
