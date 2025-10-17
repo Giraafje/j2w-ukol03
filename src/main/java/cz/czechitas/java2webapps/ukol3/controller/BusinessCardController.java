@@ -45,4 +45,11 @@ public class BusinessCardController {
     return "redirect:/";
   }
 
+  @PostMapping("/delete") //has to be equal to action on the form action="/delete"
+  //name of the param 'deleteIndex' has to be equal to the property name of the input element
+  public String delete(int deleteIndex) {
+    service.deleteById(deleteIndex);
+    return "redirect:/";
+  }
+
 }

@@ -30,7 +30,7 @@ a {
 
 .vizitka {
     width: 36em;
-    height: 16em;
+    height: 18em;
     border: 1px solid gray;
     background-color: white;
     margin: 1em;
@@ -111,4 +111,9 @@ a:hover .vizitka {
     padding: 2em;
     box-shadow: 5px 5px 10px black;
     max-width: 40rem;
+}
+
+.navigation {
+    color: white;
+    font-size: 20px;
 }

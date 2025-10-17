@@ -30,4 +30,8 @@ public class BusinessCardService {
     businessCardList.add(businessCard);
   }
 
+  public void deleteById(int id) {
+    businessCardList.remove(id);
+  }
+
 }

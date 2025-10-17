@@ -31,6 +31,9 @@
         <div class="mapa">
             <iframe style="border:none" src="https://frame.mapy.cz/?q=${businessCard.fullAddress?url("UTF-8")}" width="100%" height="100%" frameborder="0"></iframe>
         </div>
+        <nav>
+            <a href="/" class="navigation">◂ Back to Homepage</a>
+        </nav>
     </div>
 </body>
 </html>
