@@ -14,7 +14,7 @@
     [#list businessCardList]
         <div class="seznam">
         [#items as businessCard]
-            <a href="${businessCard?index}">
+            <a href="/detail/${businessCard?index}">
                 <div class="vizitka">
                     <div class="jmeno">${businessCard.personName}</div>
                     <div class="firma">${businessCard.companyName}</div>
