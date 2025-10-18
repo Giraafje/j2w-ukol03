@@ -35,7 +35,7 @@ public class BusinessCardController {
   }
 
   @GetMapping("/nova")
-  public ModelAndView nova() {
+  public ModelAndView newBusinessCard() {
     return new ModelAndView("nova");
   }
 
@@ -45,10 +45,9 @@ public class BusinessCardController {
     return "redirect:/";
   }
 
-  @PostMapping("/delete") //has to be equal to action on the form action="/delete"
-  //name of the param 'deleteIndex' has to be equal to the property name of the input element
-  public String delete(int deleteIndex) {
-    service.deleteById(deleteIndex);
+  @PostMapping("/delete/{id}") //has to be equal to action on the form action="/delete/{id}"
+  public String delete(@PathVariable int id) {
+    service.deleteById(id);
     return "redirect:/";
   }
 
